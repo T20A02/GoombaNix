@@ -34,14 +34,14 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        intel-vaapi-driver
-        intel-media-driver
+        amdvlk
+        rocmPackages.clr.icd
         libvdpau-va-gl
-        intel-gpu-tools
         cudatoolkit
       ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-      setLdLibraryPath = true;
+      extraPackages32 = with pkgs; [
+        pkgsi686Linux.amdvlk
+      ];
     };
     nvidia = {
       modesetting.enable = true;
@@ -88,7 +88,7 @@
       xkb.layout = "us";
       xkb.variant = "";
       excludePackages = [ pkgs.xterm ];
-      videoDrivers = ["iHD" "i965" "nvidia"];
+      videoDrivers = ["amdgpu" "nvidia"];
       displayManager.gdm = {
         enable = true;
         wayland = true;
