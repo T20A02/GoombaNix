@@ -58,12 +58,11 @@
         };
       intelBusId = "PCI:4:0:0";
       nvidiaBusId = "PCI:1:0:0";
+      };
     };
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;    
   };
-
-
-      
-    };
   
   # Audio Service
   services = {
@@ -97,6 +96,7 @@
     dbus.enable = true;
     gvfs.enable = true;
     tumbler.enable = true;
+    blueman.enable = true;
     gnome = {
       sushi.enable = true;
       gnome-keyring.enable = true;
