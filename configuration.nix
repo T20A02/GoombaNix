@@ -115,6 +115,13 @@
   security.rtkit.enable = true;
   networking.networkmanager.enable = true;
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "goomba" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
+
+
   programs = {
     hyprland = {
       enable = true;
@@ -198,6 +205,8 @@
     nvidia-vaapi-driver
     gsettings-desktop-schemas
     swaynotificationcenter
+#	dunst
+#	mako
     wlr-randr
     ydotool
     wl-clipboard
@@ -233,6 +242,8 @@
     asusctl
     libnotify
     python3
+    virtualbox
+    mpd
   ];
 
   environment.sessionVariables = {
