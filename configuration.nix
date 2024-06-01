@@ -89,7 +89,6 @@
 
   # Services
   services = {
-#    libinput.enable = true;
     xserver = {
       enable = true;
       xkb.layout = "us";
@@ -119,7 +118,6 @@
   users.extraGroups.vboxusers.members = [ "goomba" ];
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
 
 
   programs = {
@@ -204,9 +202,7 @@
     gnome.gnome-themes-extra
     nvidia-vaapi-driver
     gsettings-desktop-schemas
-    swaynotificationcenter
-#	dunst
-#	mako
+	dunst
     wlr-randr
     ydotool
     wl-clipboard
@@ -259,11 +255,10 @@
     SDL_VIDEODRIVER = "wayland";
     _JAVA_AWT_WM_NONREPARENTING = "1";
     CLUTTER_BACKEND = "wayland";
-    WLR_RENDERER = "vulkan";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
   }; 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
