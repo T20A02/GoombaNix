@@ -37,13 +37,9 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        amdvlk
         rocmPackages.clr.icd
         libvdpau-va-gl
         cudatoolkit
-      ];
-      extraPackages32 = with pkgs; [
-        pkgsi686Linux.amdvlk
       ];
     };
     nvidia = {
@@ -54,17 +50,7 @@
       forceFullCompositionPipeline = true;
       powerManagement.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
-      prime = {
-        offload = {
-      	  enable = true;
-      	  enableOffloadCmd = true;
-        };
-      intelBusId = "PCI:4:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-      };
-    };
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;    
+    };  
   };
   
   # Audio Service
